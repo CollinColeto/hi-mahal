@@ -61,7 +61,6 @@ const botReplies = [
   'I hope kahit papano malighten up ko ang mood mo',
   'I love you always mahal ko',
 ]
-]
 
 let typing = false
 
