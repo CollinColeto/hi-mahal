@@ -1,12 +1,11 @@
 <template>
   <section class="big-message">
-
     <!-- Text first -->
-    <h2>Another Year, Another Beautiful Chapter</h2>
+    <h2>No Pressure, Just Me Being Real</h2>
 
     <p>
-      This year is a blank page waiting for your story.
-      Happy Birthday — today and always. 🎂✨
+      I’m not expecting you to suddenly feel okay or respond differently. I just wanted you to know
+      I’m here, I care about you, and I’m willing to take things one step at a time with you.
     </p>
 
     <!-- 🎁 Gift Box under the text -->
@@ -25,15 +24,11 @@
     <transition name="scroll">
       <div class="scroll" v-if="opened">
         <p class="surprise">A little surprise just for you 💖</p>
-        <a href="/BirthdaySurprise.zip" download="BirthdaySurprise.zip">
-          Download your birthday surprise 🎉
-        </a>
+        <a href="/LoveSurprise.zip" download="LoveSurprise.zip"> Download your surprise 🎉 </a>
       </div>
     </transition>
-
   </section>
 </template>
-
 
 <script setup>
 import { ref, nextTick } from 'vue'
@@ -46,7 +41,6 @@ const openGift = () => {
   nextTick(() => launchConfetti())
 }
 
-// Simple confetti using canvas
 const launchConfetti = () => {
   const canvas = confettiCanvas.value
   canvas.width = window.innerWidth
@@ -64,18 +58,18 @@ const launchConfetti = () => {
       color: colors[Math.floor(Math.random() * colors.length)],
       speed: Math.random() * 3 + 2,
       tilt: Math.random() * 10 - 5,
-      tiltSpeed: Math.random() * 0.1 + 0.05
+      tiltSpeed: Math.random() * 0.1 + 0.05,
     })
   }
 
   const draw = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    confettis.forEach(c => {
+    confettis.forEach((c) => {
       ctx.beginPath()
       ctx.fillStyle = c.color
       ctx.save()
       ctx.translate(c.x, c.y)
-      ctx.rotate(c.tilt * Math.PI / 180)
+      ctx.rotate((c.tilt * Math.PI) / 180)
       ctx.fillRect(0, 0, c.r, c.r * 0.4)
       ctx.restore()
       c.y += c.speed
@@ -178,7 +172,7 @@ const launchConfetti = () => {
   width: 280px;
   margin: 1.5rem auto;
   border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
   border: 2px solid #d9c6a3;
   background-image: linear-gradient(120deg, #fff5e6 0%, #ffeac4 100%);
   background-size: cover;
@@ -202,9 +196,18 @@ const launchConfetti = () => {
 }
 
 @keyframes scrollOpen {
-  0% { transform: scaleY(0); opacity: 0; }
-  60% { transform: scaleY(1.1); opacity: 1; }
-  100% { transform: scaleY(1); opacity: 1; }
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scaleY(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
 .gift-text {
