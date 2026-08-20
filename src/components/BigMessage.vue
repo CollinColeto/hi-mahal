@@ -7,26 +7,6 @@
       I’m not expecting you to suddenly feel okay or respond differently. I just wanted you to know
       I’m here, I care about you, and I’m willing to take things one step at a time with you.
     </p>
-
-    <!-- 🎁 Gift Box under the text -->
-    <div class="gift-wrapper" v-if="!opened" @click="openGift">
-      <div class="gift-box">
-        <div class="lid"></div>
-        <div class="box"></div>
-      </div>
-      <span class="gift-text">Tap to open 🎁</span>
-    </div>
-
-    <!-- 🎊 Confetti -->
-    <canvas v-if="opened" ref="confettiCanvas" class="confetti-canvas"></canvas>
-
-    <!-- 📜 Scroll -->
-    <transition name="scroll">
-      <div class="scroll" v-if="opened">
-        <p class="surprise">A little surprise just for you 💖</p>
-        <a href="/LoveSurprise.zip" download="LoveSurprise.zip"> Download your surprise 🎉 </a>
-      </div>
-    </transition>
   </section>
 </template>
 
