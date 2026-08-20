@@ -119,6 +119,6 @@ onMounted(async () => {
   await new Promise((r) => setTimeout(r, 400))
   await typeBotMessage('I love you always Baba!)
   await new Promise((r) => setTimeout(r, 400))
-  await typeBotMessage('Mwa mwa mwa mwa mwa')
+  await typeBotMessage('Mwa mwa mwa mwa mwa!')
 })
 </script>
