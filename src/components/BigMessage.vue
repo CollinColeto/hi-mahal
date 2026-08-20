@@ -7,6 +7,32 @@
       I’m not expecting you to suddenly feel okay or respond differently. I just wanted you to know
       I’m here, I care about you, and I’m willing to take things one step at a time with you.
     </p>
+
+<!-- Guy with glasses blowing a kiss -->
+<div class="kiss-guy">
+  <div class="guy-face">
+    <div class="hair"></div>
+
+    <div class="glasses">
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="eyes">
+      <span>•</span>
+      <span>•</span>
+    </div>
+
+    <div class="mouth">😘</div>
+  </div>
+
+  <div class="guy-body">
+    <div class="arm left-arm">👋</div>
+    <div class="arm right-arm">💗</div>
+  </div>
+
+  <div class="kiss">💋</div>
+</div>
   </section>
 </template>
 
@@ -214,5 +240,161 @@ const launchConfetti = () => {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: #141414;
+}
+
+/* 💋 Guy with glasses blowing a kiss */
+.kiss-guy {
+  position: relative;
+  width: 180px;
+  height: 190px;
+  margin: 2rem auto 0;
+  animation: guyFloat 3s ease-in-out infinite;
+}
+
+.guy-face {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: auto;
+  background: #ffd1b3;
+  border-radius: 50%;
+  border: 3px solid #333;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.hair {
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  width: 94px;
+  height: 40px;
+  background: #222;
+  border-radius: 50% 50% 25% 25%;
+  transform: rotate(-3deg);
+}
+
+.glasses {
+  position: absolute;
+  top: 42px;
+  left: 9px;
+  width: 92px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.glasses span {
+  width: 36px;
+  height: 25px;
+  border: 4px solid #222;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.glasses::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  width: 14px;
+  height: 4px;
+  background: #222;
+}
+
+.eyes {
+  position: absolute;
+  top: 51px;
+  left: 28px;
+  width: 55px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.mouth {
+  position: absolute;
+  bottom: 10px;
+  left: 39px;
+  font-size: 25px;
+  animation: kissFace 1.5s ease-in-out infinite;
+}
+
+.guy-body {
+  position: absolute;
+  bottom: 0;
+  left: 35px;
+  width: 110px;
+  height: 80px;
+  background: #4f46e5;
+  border-radius: 45px 45px 15px 15px;
+  border: 3px solid #333;
+}
+
+.arm {
+  position: absolute;
+  font-size: 30px;
+}
+
+.left-arm {
+  left: -30px;
+  top: 15px;
+  transform: rotate(-25deg);
+}
+
+.right-arm {
+  right: -30px;
+  top: 15px;
+  transform: rotate(20deg);
+}
+
+.kiss {
+  position: absolute;
+  top: 35px;
+  right: 5px;
+  font-size: 28px;
+  animation: kissFly 2s ease-in-out infinite;
+}
+
+@keyframes guyFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes kissFace {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes kissFly {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.5) rotate(-15deg);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+    transform: translate(35px, -15px) scale(1.2) rotate(10deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(65px, -25px) scale(0.8) rotate(20deg);
+  }
 }
 </style>
