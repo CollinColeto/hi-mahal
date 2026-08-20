@@ -94,181 +94,37 @@ const launchConfetti = () => {
 <style scoped>
 .big-message {
   text-align: center;
-  padding: 2rem;
+  padding: 1.25rem 1rem;
   position: relative;
 }
 
-/* 🎁 Gift Box */
-.gift-wrapper {
-  cursor: pointer;
-  margin: 6rem 0 1rem; /* increased top margin */
-  perspective: 600px;
-}
-
-.gift-box {
-  position: relative;
-  width: 120px;
-  height: 90px;
-  margin: auto;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
-}
-
-.gift-box:hover {
-  transform: rotateY(10deg) rotateX(5deg);
-}
-
-.box {
-  width: 100%;
-  height: 70px;
-  background: linear-gradient(135deg, #e63946, #f77f00);
-  border-radius: 10px 10px 12px 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  position: relative;
-  z-index: 1;
-}
-
-.lid {
-  position: absolute;
-  top: -25px;
-  width: 100%;
-  height: 30px;
-  background: linear-gradient(135deg, #ffd700, #ffba00);
-  border-radius: 10px 10px 0 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transform-origin: bottom center;
-  animation: lidOpen 0.8s forwards;
-  z-index: 2;
-}
-
-.lid::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background: linear-gradient(90deg, #ffd700, #ffba00);
-  transform: translateY(-50%);
-  border-radius: 3px;
-}
-.lid::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: -5px;
-  width: 15px;
-  height: 15px;
-  background: #ffd700;
-  border-radius: 50%;
-  transform: translateX(-50%);
-}
-
-/* lid opening animation */
-@keyframes lidOpen {
-  to {
-    transform: rotateX(-60deg) translateY(-20px);
-  }
-}
-
-/* 📜 Scroll */
-.scroll {
-  background: #fff5e6;
-  padding: 2rem 1.5rem;
-  width: 280px;
-  margin: 1.5rem auto;
-  border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-  border: 2px solid #d9c6a3;
-  background-image: linear-gradient(120deg, #fff5e6 0%, #ffeac4 100%);
-  background-size: cover;
-  overflow: hidden;
-  transform-origin: top center;
-  font-family: 'Cursive', sans-serif;
-  color: #5a4630;
-  letter-spacing: 0.5px;
-}
-
-.scroll a {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #e63946;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.scroll-enter-active {
-  animation: scrollOpen 0.8s ease-out forwards;
-}
-
-@keyframes scrollOpen {
-  0% {
-    transform: scaleY(0);
-    opacity: 0;
-  }
-  60% {
-    transform: scaleY(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scaleY(1);
-    opacity: 1;
-  }
-}
-
-.gift-text {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  color: #444;
-  font-weight: 500;
-}
-
-/* Confetti canvas */
-.confetti-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-}
-
-.surprise {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #141414;
-}
-
-/* 💋 Guy with glasses blowing a kiss */
+/* 💋 Responsive guy with glasses */
 .kiss-guy {
   position: relative;
-  width: 180px;
-  height: 190px;
+  width: min(180px, 55vw);
+  height: min(190px, 58vw);
   margin: 2rem auto 0;
   animation: guyFloat 3s ease-in-out infinite;
 }
 
 .guy-face {
   position: relative;
-  width: 110px;
-  height: 110px;
+  width: 60%;
+  aspect-ratio: 1;
   margin: auto;
   background: #ffd1b3;
   border-radius: 50%;
   border: 3px solid #333;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
 
 .hair {
   position: absolute;
-  top: -8px;
-  left: 8px;
-  width: 94px;
-  height: 40px;
+  top: -6%;
+  left: 7%;
+  width: 86%;
+  height: 35%;
   background: #222;
   border-radius: 50% 50% 25% 25%;
   transform: rotate(-3deg);
@@ -276,57 +132,57 @@ const launchConfetti = () => {
 
 .glasses {
   position: absolute;
-  top: 42px;
-  left: 9px;
-  width: 92px;
+  top: 39%;
+  left: 8%;
+  width: 84%;
   display: flex;
   justify-content: space-between;
   z-index: 3;
 }
 
 .glasses span {
-  width: 36px;
-  height: 25px;
-  border: 4px solid #222;
-  border-radius: 8px;
+  width: 38%;
+  aspect-ratio: 1.4;
+  border: 3px solid #222;
+  border-radius: 7px;
   background: rgba(255, 255, 255, 0.25);
 }
 
 .glasses::after {
   content: '';
   position: absolute;
-  top: 10px;
-  left: 40px;
-  width: 14px;
-  height: 4px;
+  top: 42%;
+  left: 40%;
+  width: 20%;
+  height: 3px;
   background: #222;
 }
 
 .eyes {
   position: absolute;
-  top: 51px;
-  left: 28px;
-  width: 55px;
+  top: 47%;
+  left: 25%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: clamp(10px, 3vw, 16px);
   z-index: 2;
 }
 
 .mouth {
   position: absolute;
-  bottom: 10px;
-  left: 39px;
-  font-size: 25px;
+  bottom: 7%;
+  left: 36%;
+  font-size: clamp(18px, 7vw, 28px);
   animation: kissFace 1.5s ease-in-out infinite;
 }
 
 .guy-body {
   position: absolute;
   bottom: 0;
-  left: 35px;
-  width: 110px;
-  height: 80px;
+  left: 20%;
+  width: 60%;
+  height: 42%;
   background: #4f46e5;
   border-radius: 45px 45px 15px 15px;
   border: 3px solid #333;
@@ -334,53 +190,56 @@ const launchConfetti = () => {
 
 .arm {
   position: absolute;
-  font-size: 30px;
+  font-size: clamp(20px, 8vw, 32px);
 }
 
 .left-arm {
-  left: -30px;
-  top: 15px;
+  left: -27%;
+  top: 12%;
   transform: rotate(-25deg);
 }
 
 .right-arm {
-  right: -30px;
-  top: 15px;
+  right: -27%;
+  top: 12%;
   transform: rotate(20deg);
 }
 
 .kiss {
   position: absolute;
-  top: 35px;
-  right: 5px;
-  font-size: 28px;
+  top: 18%;
+  right: 3%;
+  font-size: clamp(20px, 7vw, 30px);
   animation: kissFly 2s ease-in-out infinite;
 }
 
+/* Floating animation */
 @keyframes guyFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-7px);
   }
 }
 
 @keyframes kissFace {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
 
   50% {
-    transform: scale(1.15);
+    transform: scale(1.12);
   }
 }
 
 @keyframes kissFly {
   0% {
     opacity: 0;
-    transform: translate(0, 0) scale(0.5) rotate(-15deg);
+    transform: translate(0, 0) scale(0.5);
   }
 
   30% {
@@ -389,12 +248,60 @@ const launchConfetti = () => {
 
   70% {
     opacity: 1;
-    transform: translate(35px, -15px) scale(1.2) rotate(10deg);
+    transform: translate(25px, -12px) scale(1.15);
   }
 
   100% {
     opacity: 0;
-    transform: translate(65px, -25px) scale(0.8) rotate(20deg);
+    transform: translate(50px, -20px) scale(0.8);
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .big-message {
+    padding: 1.25rem 1rem;
+    overflow-x: hidden;
+  }
+
+  .big-message h2 {
+    font-size: 1.45rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .big-message p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 95%;
+  }
+
+  .kiss-guy {
+    width: 145px;
+    height: 155px;
+    margin-top: 1.5rem;
+  }
+}
+
+/* 📱 Very small phones */
+@media (max-width: 380px) {
+  .big-message {
+    padding: 1rem 0.75rem;
+  }
+
+  .big-message h2 {
+    font-size: 1.25rem;
+  }
+
+  .big-message p {
+    font-size: 0.88rem;
+  }
+
+  .kiss-guy {
+    width: 125px;
+    height: 140px;
+    margin-top: 1.25rem;
   }
 }
 </style>
