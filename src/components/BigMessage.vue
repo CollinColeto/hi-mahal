@@ -132,7 +132,7 @@ const launchConfetti = () => {
 
 .glasses {
   position: absolute;
-  top: 39%;
+  top: 47%;
   left: 50%;
   width: 84%;
   display: flex;
