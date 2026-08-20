@@ -5,7 +5,7 @@
 
     <p>
       I’m not expecting you to suddenly feel okay or respond differently. I just wanted you to know
-      I’m here, I care about you, and I’m willing to take things one step at a time with you.
+      I’m here, I care about you, and I will love you genuinely and purely.
     </p>
 
 <!-- Guy with glasses blowing a kiss -->
