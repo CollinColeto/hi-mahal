@@ -55,11 +55,11 @@ const chatContainer = ref(null)
 const showChat = ref(false)
 
 const botReplies = [
-  'Hi, Mahal ❤️',
-  'I hope you do not stress yourself too much',
-  'I know medyo nainis ka today di lng sakin pati na rin sa mga alaga mo',
+  'Hi, Baba ❤️',
+  'I hope okay lang tayo',
+  'I know medyo nawala mood mo today',
   'I hope kahit papano malighten up ko ang mood mo',
-  'I love you always mahal ko',
+  'I love you always baba ko',
 ]
 
 let typing = false
